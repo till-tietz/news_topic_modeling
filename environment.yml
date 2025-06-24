@@ -1,0 +1,13 @@
+name: news_topic_modeling_env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - polars==0.19.2
+      - numpy==1.26.4
+      - tensorflow-cpu==2.18.0
+      - scikit-learn==1.2.2
+      - matplotlib==3.8.4
+      - gensim==4.3.3
