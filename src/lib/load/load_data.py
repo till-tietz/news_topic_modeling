@@ -82,10 +82,9 @@ def load_data(path: Path | str = None) -> Data:
 
     return out
 
-
 def load_embedding(
         path: Path | str = None,
-        embedding_name: str = 'GoogleNews-vectors-negative300.bin.gz'
+        embedding_name: str = 'filtered_embedding.kv'
 ) -> KeyedVectors:
     """ Loads a pretrained embedding binary specified by embedding_name from
     a directory specified by path.
@@ -107,13 +106,12 @@ def load_embedding(
     else:
         embedding_dir = Path(path)
 
+    file_path = embedding_dir / embedding_name
+
     logging.info(f'loading {embedding_name} from {embedding_dir}')
-    embedding = KeyedVectors.load_word2vec_format(embedding_dir / embedding_name, binary=True)
+    embedding = KeyedVectors.load(str(file_path))
     logging.info(f'loaded embedding {embedding_name}')
 
     return embedding
-
-
-
 
 
