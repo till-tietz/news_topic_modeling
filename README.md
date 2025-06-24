@@ -39,6 +39,8 @@ a LSTM + Dense layer RNN architecture with a multi-class classification objectiv
     - yields strong performance on classification taks
     - Dense layer prior to final layer serves as an embedding that has been refined w.r.t the training objective and can be used to compute fast cosine similarities for reccomendation and ranking
 
+**NOTE:** as the original google news 300 word2vec embedding is extremely large and pushing it to git exceeds the git-lfs quota rendering the repo unclonable; I extracted embeddings for the words that actually occur in the data and saved this reduced embedding file.
+
 ### 2.2 Architecture
 
 - all code relevant to the Docker image is contained in the `src` dircetory
@@ -54,13 +56,10 @@ I opted for the above modular approach that encapsulates all methods in function
 
 ## 3. Reproduce Results
 
-#### 1. install lfs and clone the repo
-**NOTE:** cloning may take some time due to a large embedding file (in the tradeoff between run-time and memory I chose runtime over memory optimization)
+#### 1. clone the repo
 
 ``` bash
 cd
-sudo apt install git-lfs
-git lfs install
 git clone https://github.com/till-tietz/news_topic_modeling.git
 ```
 
