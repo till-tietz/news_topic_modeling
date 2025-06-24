@@ -54,10 +54,13 @@ I opted for the above modular approach that encapsulates all methods in function
 
 ## 3. Reproduce Results
 
-#### 1. clone the repo
+#### 1. install lfs and clone the repo
+**NOTE:** cloning may take some time due to a large embedding file (in the tradeoff between run-time and memory I chose runtime over memory optimization)
 
 ``` bash
 cd
+sudo apt install git-lfs
+git lfs install
 git clone https://github.com/till-tietz/news_topic_modeling.git
 ```
 
